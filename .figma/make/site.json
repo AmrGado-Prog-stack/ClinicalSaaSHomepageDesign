@@ -1,0 +1,10 @@
+{
+  "description": "A clinical SaaS homepage showcasing digital tools that help healthcare providers manage patient care and streamline clinical workflows.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

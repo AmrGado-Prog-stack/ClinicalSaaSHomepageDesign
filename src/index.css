@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "Manrope", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-width: 320px;
+    background: #f7faf9;
+    color: #172c2b;
+    font-family: "DM Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button,
+  a {
+    cursor: pointer;
+  }
+
+  button:focus-visible,
+  a:focus-visible {
+    outline: 3px solid rgb(21 148 131 / 25%);
+    outline-offset: 3px;
+  }
+}
+
+.font-display {
+  font-family: "Manrope", sans-serif;
+}
+
+.hero-orb {
+  background:
+    radial-gradient(circle at 40% 45%, rgb(219 241 235 / 85%), transparent 52%),
+    radial-gradient(circle at 70% 70%, rgb(240 232 241 / 65%), transparent 45%);
+  filter: blur(2px);
+}
+
+.dashboard-shell {
+  transform: perspective(1200px) rotateY(-1.8deg) rotateX(0.8deg);
+  animation: reveal 700ms cubic-bezier(0.2, 0.75, 0.2, 1) both;
+}
+
+.float-card {
+  animation: float 4.5s ease-in-out infinite;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: perspective(1200px) rotateY(-1.8deg) rotateX(0.8deg) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1200px) rotateY(-1.8deg) rotateX(0.8deg) translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
